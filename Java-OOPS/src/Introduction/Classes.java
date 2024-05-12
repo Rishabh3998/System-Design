@@ -67,6 +67,17 @@ public class Classes {
 
         Student peter = new Student(10, "Peter", 99);
         peter.getStudentData();
+        peter.greeting();
+
+        Student random = new Student(peter);
+        random.getStudentData();
+
+        final int VALUE = 10;
+        // VALUE = 20; // final is like const we cannot modify the variable which is of final type
+
+        // This immutability of final keyword is only true for primitive data types. (int, float, char etc)
+        // For non-primitive re-initialisation is not possible. we can change the existing properties but
+        // cannot reassign the whole data type.
     }
 }
 
@@ -77,8 +88,16 @@ class Student {
     float marks;
     int rollNumber;
 
+    // Constructor overloading
+
     // Default Constructor
     Student() {};
+
+    Student (Student other) {
+        this.name = other.name;
+        this.rollNumber = other.rollNumber;
+        this.marks = other.marks;
+    }
 
     // Parametrised Constructor
     Student(int rollNumber, String name, float marks) {
@@ -97,5 +116,16 @@ class Student {
     // Method/Getter
     void getStudentData () {
         System.out.println(rollNumber + " " + name + " " + marks);
+    }
+
+    void greeting () {
+        System.out.println("Hello " + this.name);
+    }
+
+    // Whenever an object is destroyed and collected as garbage we can do some operations
+    // after that which can be used like a notification. For this we have to use finalize().
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Object is freed and collected as garbage");
     }
 }
