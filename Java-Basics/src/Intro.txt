@@ -1,0 +1,110 @@
+What is programming language ?
+
+It is a medium through which a programmer communicates with computer.
+It is used to provide set of instructions in C, C++, Java, etc. to perform a specific task.
+
+=> Java ?
+
+1. Java is a high level, class based, pure object-oriented programming language.
+2. It is both single threaded and multi threaded language.
+
+Single threading: Ability to execute single piece/path of code at a time.
+Multi threading: Ability to execute multiple paths of a code at the same time.
+
+3. By-default it is single threaded, but we can break off and create a new thread.
+
+By-default main class is the single thread that we use.
+
+In java there are 2 main ways to create a new thread.
+
+1. Have a class that extends the thread class.
+Create a new class which extends Thread class.
+
+// For more info
+https://youtu.be/r_MbozD32eo?si=aIfn5ahCjMZ9Bpzz
+
+public class Multithreading {
+    public static void main (String [] args) {
+        // logic
+        MultiThreadThing myThing = new MultiThreadThing(); // branched off thread 1
+        MultiThreadThing myThing2 = new MultiThreadThing(); // branched off thread 2
+
+        // This will run our code present in run method but this will kickstart in the same thread.
+        myThing.run();
+        myThing2.run();
+
+        // To start the code written in run method in a separate thread we have to use
+        myThing.start();
+        myThing2.start();
+        // This will branch off a new thread and start running the code in that thread.
+    }
+}
+
+public class MultiThreadThing extends Thread {
+    // This class now extends through the thread class
+    // Now to make this class multiThreadable and complete the process of multithreading
+    // we have to override the thread classes run method
+    // since we are overriding the run method of Thread classes use @override annotation here
+
+    @override
+    public void run() {
+        // logic
+        // What ever code we want to run on multiple threads
+        for (int i = 0; i <= 5 ; i++) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000); // 1000 ms
+            } catch (InterruptedException err) {
+                err.printStackTrace();
+            }
+        }
+    }
+}
+
+PS: When we run processes in multiple threads we don't know which one will execute first. This is a randomize process.
+They will all run at the same time independently but no certain order will be there.
+And since they are independent if any one of them throws an exception other won;t be affected.
+
+2. Second way is to implements Runnable interface to the multithreading class
+But now we cannot just use start method in the main method
+
+public class Multithreading {
+    public static void main (String [] args) {
+        // logic
+        MultiThreadThing myThing = new MultiThreadThing(); // branched off thread 1
+        MultiThreadThing myThing2 = new MultiThreadThing(); // branched off thread 2
+        Thread myThread = new Thread(myThing);
+        Thread myThread2 = new Thread(myThing2);
+
+        // To start the code written in run method in a separate thread we have to use
+        myThread.start();
+        myThread2.start();
+        // This will branch off a new thread and start running the code in that thread.
+    }
+}
+
+public class MultiThreadThing implements Runnable {
+    // This class now extends through the thread class
+    // Now to make this class multiThreadable and complete the process of multithreading
+    // we have to override the thread classes run method
+    // since we are overriding the run method of Thread classes use @override annotation here
+
+    @override
+    public void run() {
+        // logic
+        // What ever code we want to run on multiple threads
+        for (int i = 0; i <= 5 ; i++) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000); // 1000 ms
+            } catch (InterruptedException err) {
+                err.printStackTrace();
+            }
+        }
+    }
+}
+
+Second way is better coz if we extend Thread class then the class will be occupied and since java does not allow
+Multiple inheritance cause here you can only be a subclass of one class at a time. Also, we can implement multiple
+interface to a single class.
+
