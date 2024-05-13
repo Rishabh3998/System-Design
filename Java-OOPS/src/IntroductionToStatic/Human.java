@@ -20,11 +20,18 @@ public class Human {
     boolean maritalStatus;
     static long population;
 
+    static void message () {
+        System.out.println("Message for you....");
+        // this keyword refers to an object instance and static methods don't need object
+        // System.out.println(this.age); // We cannot use this keyword in static method.
+    }
+
     public Human(int age, String name, int salary, boolean maritalStatus) {
         this.age = age;
         this.name = name;
         this.salary = salary;
         this.maritalStatus = maritalStatus;
         Human.population = 7000000000L;
+        Human.message();
     }
 }
