@@ -17,6 +17,11 @@ public class InnerClasses {
         public Test(String name) {
             this.name = name;
         }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 
     class Test2 {
@@ -34,6 +39,10 @@ public class InnerClasses {
 
         System.out.println(a.name);
         System.out.println(b.name);
+
+        System.out.println(a); // Before: IntroductionToStatic.InnerClasses$Test@30f39991
+        System.out.println(a); // After: A (Overriding toString() method in Test class)
+
 
         // This object class is non-static, and we cannot access this in a static method
         // Test2 b = new Test2("Name");
