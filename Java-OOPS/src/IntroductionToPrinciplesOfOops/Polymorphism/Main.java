@@ -10,7 +10,10 @@ public class Main {
     // 1. Compile time or static polymorphism
     // -> This is achieved via method overloading and operator overloading but operator one does not exist in Java.
     // -> Method overloading: when a class with same name have multiple methods with different functionalities.
-    // 2.
+
+    // 2. Runtime / Dynamic polymorphism
+    // -> This is achieved by method overriding.
+    // -> For overriding, same function has to be there in both parent and child.
 
     public static void main(String[] args) {
         Shapes shape = new Shapes();
@@ -19,6 +22,7 @@ public class Main {
         Square square = new Square();
         // In inheritance, we saw that properties depends upon the reference type not on the object
         // But here the area function getting invoked from the square class which is object type.
+        // Reason: Method overriding
         Shapes square2 = new Square();
 
         // Here function area is depicting polymorphism
