@@ -23,5 +23,10 @@ public class Main {
         BoxWithWeight boxWeight3 = new BoxWithWeight(1,2,3,100);
         System.out.println(boxWeight3.l + " " + boxWeight3.w + " " + boxWeight3.h + " " + boxWeight3.weight);
 
+        // Here reference type is Box but instance type is BoxWeight
+        Box hybridBox = new BoxWithWeight(1,2,3,4);
+        // hybridBox.weight; // Still can't access the child property, because it is reference type that decide
+        // which properties and methods will be accessible of which class. here the reference type if Box, therefore
+        // we can only access the properties and methods of Box class.
     }
 }

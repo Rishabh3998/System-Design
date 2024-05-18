@@ -1,7 +1,8 @@
 package IntroductionToPrinciplesOfOops.Inheritance;
 
 public class Box {
-    double l;
+    double l; // if I make this private it won't be accessible to the child class and this is applicable for all
+    // properties and methods present in this or any parent class.
     double w;
     double h;
 
