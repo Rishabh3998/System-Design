@@ -45,9 +45,24 @@ public class Main {
         // Types of Inheritance:
 
         // 1. Single Inheritance: one class extends another class Eg: Box => BoxWithWeight
+
         // 2. Multilevel Inheritance: one to second then second to third Eg: A => B => C
-        // 3. Hierarchical Inheritance
-        // 4. Hybrid Inheritance
+
+        // 3. Multiple Inheritance: one class extending more than one classes. Eg: A => C, B => C
+        // PS: Java does not support multiple inheritance.
+        // Why ???
+        // class A contains n = 5, class B contains n = 10, Now in class C
+        // C c = new C();
+        // c.n; => which n will be picked here ??
+        // will it be from class A or class B Due to this ambiguity Java does not support multiple inheritance.
+
+        // But sometimes we need this kind of feature where a child class needs properties from 2 parent class.
+        // Then we use interfaces to mimic this type of inheritance
+
+        // 4. Hierarchical Inheritance: one class is inherited by many classes. Eg: A => B, C, D
+
+        // 5. Hybrid Inheritance: combination of single and multiple inheritance
+        // PS: Since we don't have multiple inheritance in java therefore, we don;t have Hybrid as well.
 
         BoxPrice boxPrice = new BoxPrice(); // Multilevel inheritance
 
