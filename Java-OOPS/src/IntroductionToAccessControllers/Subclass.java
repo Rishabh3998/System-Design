@@ -12,5 +12,10 @@ public class Subclass extends A{
 
         int[] arr = obj.getArr(); // Accessing protected member in a subclass or child class
         System.out.println(Arrays.toString(arr));
+
+        System.out.println(obj instanceof A); // true
+        System.out.println(obj instanceof Subclass); // true
+        System.out.println(obj instanceof Object); // true
+
     }
 }
