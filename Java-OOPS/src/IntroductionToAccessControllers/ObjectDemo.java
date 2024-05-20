@@ -34,7 +34,7 @@ public class ObjectDemo {
         }
 
         if (obj.equals(obj2)) {
-            // This is checking the content present in the object
+            // This is checking the content present in the object. We can use comparators too.
             System.out.println("Obj1 is equal to obj2, from equals method");
         }
 
