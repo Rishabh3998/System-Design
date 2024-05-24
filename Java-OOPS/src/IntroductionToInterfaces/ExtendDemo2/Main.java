@@ -1,19 +1,14 @@
-package IntroductionToInterfaces.ExtendDemo;
+package IntroductionToInterfaces.ExtendDemo2;
 
-public class Main implements A, B{
-
-    @Override
-    public void fun() {
-        System.out.println("Run func");
-    }
-
+public class Main implements A, B {
     @Override
     public void greet() {
         System.out.println("Greet");
     }
 
     public static void main(String[] args) {
-
+        Main obj = new Main();
+        A.staticFun();
     }
 
     // To create inheritance between class and interface use implements
