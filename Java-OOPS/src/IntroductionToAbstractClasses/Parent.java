@@ -2,9 +2,11 @@ package IntroductionToAbstractClasses;
 
 public abstract class Parent {
     int age;
+    final int VALUE;
 
     public Parent(int age) {
         this.age = age;
+        VALUE = 1234;
     }
 
     // We cannot create abstract constructors

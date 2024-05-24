@@ -43,5 +43,11 @@ public class Main {
         // Normal methods can also be created
         son.normal();
         son2.normal();
+
+        // We cannot create a final abstract class because we won;t be able to inherit it then.
+
+        // But still we cannot implement multiple inheritance via abstract classes.
+        // Because normal methods with body can still exist we do not solve our problem.
+        // We have to use interfaces.
     }
 }
