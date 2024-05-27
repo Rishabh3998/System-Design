@@ -26,6 +26,12 @@ public class Main {
             }
         });
 
+        // Using special defined comparator for this Array.
+        // Implementation done in lambda expression
+        Arrays.sort(list, (student, t1) ->
+            -(int)(student.marks - t1.marks)
+        );
+
         System.out.println(Arrays.toString(list));
 
         // here the problem is that if we need to compare these object to find the greater one
