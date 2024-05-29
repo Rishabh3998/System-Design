@@ -37,7 +37,7 @@ public class LambdaFunctions {
 
         LambdaFunctions calculator = new LambdaFunctions();
         System.out.println(operate(5,3,prod));
-
+        calculator.sum(2,4);
     }
 }
 
